@@ -1,6 +1,6 @@
-# Openfront Marketplace
+![marketplace](https://github.com/user-attachments/assets/a6f6a3d9-78ac-4e5e-8c43-22343ed4d5df)
 
-A conversational commerce marketplace where shopping happens entirely in AI chat. Products, cart, checkout, and payment—all rendered in the conversation via MCP UI. Zero transaction fees, zero data collection, complete store independence.
+A conversational commerce marketplace where shopping happens entirely in AI chat. Products, cart, checkout, and payment, all rendered in the conversation via MCP UI. Zero transaction fees, zero data collection, complete store independence.
 
 ## Demo
 https://github.com/user-attachments/assets/7ecf5787-3681-4ad7-a223-302d5439d0c1
