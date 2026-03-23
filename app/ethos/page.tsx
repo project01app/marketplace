@@ -56,21 +56,19 @@ export default function EthosPage() {
               own infrastructure that connected to every channel.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
-              This sparked the core idea: if sellers already have all the infrastructure (cart, checkout, payment
-              processing), then a marketplace doesn't need to build any of that. It just needs to connect to what
-              already exists. Discovery without infrastructure. Zero overhead, zero fees.
+              That was the first version of the idea: if sellers already have cart, checkout, and payment processing,
+              then a marketplace doesn't need to rebuild any of it. It just needs to connect to what already exists.
+              Discovery without the overhead.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
-              But then I realized the problem: that infrastructure itself is closed source. You're not escaping
-              platform dependence by moving from Amazon to Shopify. You're just trading one owner for another.
-              Shopify controls the code, sets the terms, and can change the rules whenever they want. When they
-              removed their Amazon sales channel over a payment dispute, thousands of merchants lost a critical
-              integration overnight.
+              Then the problem became obvious. That infrastructure was closed too. Moving from Amazon to Shopify
+              wasn't really escaping platform dependence. It was just choosing a different owner. Shopify controls
+              the code, sets the terms, and can change the rules whenever it wants. When they removed their Amazon
+              sales channel over a payment dispute, thousands of merchants lost a critical integration overnight.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed">
-              True independence requires owning the infrastructure. Which meant that before I could build a
-              decentralized marketplace, I first had to build the platforms that merchants could actually own.
-              The marketplace was the apple pie. But first, I had to invent the universe.
+              I wanted to build the marketplace first, but the deeper I got, the more obvious it became that the hard
+              part came earlier, the infrastructure itself.
             </p>
           </div>
 
@@ -86,10 +84,9 @@ export default function EthosPage() {
               deploy Openfront, you're not renting infrastructure. You're owning it.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed">
-              Openfront isn't required to use this marketplace. But it's our answer to what businesses should
-              run if they want complete independence. Together, Openfront and this marketplace create fully
-              decentralized commerce: businesses own their platforms, marketplaces provide discovery without rent,
-              and customers know their data stays with the stores they trust.
+              Openfront isn't required to use this marketplace. But it's the cleanest answer I know if a business
+              actually wants to own the stack it's running on. That's the bigger point for me. The marketplace can
+              do discovery, but the store should still own the system underneath it.
             </p>
           </div>
 
@@ -152,9 +149,8 @@ export default function EthosPage() {
           <div>
             <h2 className="text-4xl font-semibold mb-4 font-instrument-serif">Standardize the Interface</h2>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
-              Interoperability is the moat everyone can share. Stores expose a small, vendor-agnostic surface:
-              catalog, offer, cart, checkout, payment, order status. Marketplaces speak the same spec. It's like
-              RSS for commerce.
+              The idea is pretty simple, stores expose a small standard surface for catalog, offer, cart, checkout,
+              payment, and order status. Marketplaces talk to that instead of building a custom integration every time.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
               For merchants: set up your store once, and it automatically works with every marketplace using this
@@ -246,8 +242,8 @@ export default function EthosPage() {
               <strong>"What stops you from becoming the next Amazon?"</strong>
             </p>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
-              Our moat is making sure stores never get trapped by moats. The code is open source. If we start
-              playing games, anyone can fork and compete. That's the point.
+              The code is open source. If we start playing games, people can fork it and compete with us. That's how
+              it should be.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
               When new marketplaces appear, stores connect effortlessly. No new dashboards to learn. No new platforms
@@ -259,10 +255,9 @@ export default function EthosPage() {
               <strong>"Why would stores trust this?"</strong>
             </p>
             <p className="text-fd-muted-foreground leading-relaxed">
-              Because there's nothing to trust. We don't hold their money. We don't own their customers. We don't
-              control their data. We're querying their existing API and rendering it conversationally. The worst
-              case is we shut down and nothing happens to them. They keep operating exactly as before. That's not
-              trust. That's architecture.
+              Because there's less to trust in the first place. We don't hold their money. We don't own their
+              customers. We don't control their data. We're querying their existing API and rendering it
+              conversationally. If we shut down, they keep operating exactly as before.
             </p>
           </div>
 
@@ -291,21 +286,22 @@ export default function EthosPage() {
               through a conversational interface.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed">
-              This is commerce where merchants own the infrastructure, customers control their data, and discovery
-              happens through open protocols instead of closed algorithms. No landlords. No gatekeepers. No one can
-              copy your success and crush you with it. Discovery doesn't have to cost anything.
+              The model is straightforward, stores own their stack, customers deal directly with the store they're
+              buying from, and marketplaces compete on curation instead of ownership. No platform in the middle
+              deciding who matters. No one in a position to copy what works and bury the original seller.
             </p>
           </div>
 
           <div>
             <h2 className="text-4xl font-semibold mb-4 font-instrument-serif">The Pledge</h2>
             <p className="text-fd-muted-foreground leading-relaxed mb-4">
-              Protocol, not permission. Discovery without rent. Exit without regret.
+              If this works, it works because nobody has to ask permission, nobody has to give up their processor,
+              and nobody gets trapped.
             </p>
             <p className="text-fd-muted-foreground leading-relaxed">
-              If you sell, expose the interface, keep your processor, and carry your reputation wherever you list.
-              If you curate, stand up a directory, publish your criteria, and let your taste be your advantage.
-              If you build, harden the spec, write adapters, improve tests, and fork without drama when you must.
+              If you sell, expose the interface and keep your processor. If you curate, build a directory and be clear
+              about your standards. If you build, harden the spec, write adapters, improve the tests, and fork it if
+              you need to.
             </p>
           </div>
         </div>
