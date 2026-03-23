@@ -378,13 +378,13 @@ export default function HomePage() {
     <div className="flex flex-col h-dvh relative bg-background">
       {isAiChatReady ? (
         <div className={cn(
-          "@container/main relative z-10 flex flex-1 min-h-0 w-full flex-col items-center justify-end md:justify-center overflow-x-hidden pt-16"
+          "@container/main relative z-10 flex flex-1 min-h-0 w-full flex-col items-center justify-center overflow-x-hidden pt-16"
         )}>
           <AnimatePresence initial={false} mode="popLayout">
             {showOnboarding ? (
               <motion.div
                 key="onboarding"
-                className="absolute bottom-[60%] mx-auto max-w-[50rem] md:relative md:bottom-auto mb-8"
+                className="relative mx-auto max-w-[50rem] mb-8 px-2 sm:px-0"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
