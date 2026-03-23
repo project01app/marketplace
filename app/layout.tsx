@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import Link from "next/link";
+import { Geist, Geist_Mono, Instrument_Serif, Syne } from "next/font/google";
 import "./globals.css";
 import { AiConfigProvider } from "../features/marketplace/hooks/use-ai-config";
 import { LogoIcon as OpenFrontIcon } from "@/components/OpenfrontLogo";
@@ -23,9 +24,43 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Openfront Marketplace",
+  metadataBase: new URL("https://marketplace.openship.org"),
+  title: "the / marketplace",
   description: "AI-powered decentralized marketplace",
+  openGraph: {
+    title: "the / marketplace",
+    description: "AI-powered decentralized marketplace",
+    url: "https://marketplace.openship.org",
+    siteName: "the / marketplace",
+    images: [
+      {
+        url: "/og/marketplace.png",
+        width: 1200,
+        height: 630,
+        alt: "the / marketplace",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "the / marketplace",
+    description: "AI-powered decentralized marketplace",
+    images: ["/og/marketplace.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+  },
 };
 
 // Check if ENV vars are available (server-side only)
@@ -57,6 +92,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link href="/favicon.svg" rel="icon" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
       >
@@ -73,26 +111,27 @@ export default async function RootLayout({
                     {/* Triangle arrangement of logos - hide on mobile */}
                     <div className="hidden sm:flex flex-col items-center gap-[2px]">
                       {/* Top logo */}
-                      <OpenFrontIcon className="size-2" suffix="-navbar-top" />
+                      <OpenFrontIcon className="size-1.5" suffix="-navbar-top" />
                       {/* Bottom two logos */}
                       <div className="flex items-center gap-[2px]">
-                        <OpenShipIcon className="size-2" suffix="-navbar-left" />
-                        <OpenSupportIcon className="size-2" suffix="-navbar-right" />
+                        <OpenShipIcon className="size-1.5" suffix="-navbar-left" />
+                        <OpenSupportIcon className="size-1.5" suffix="-navbar-right" />
                       </div>
                     </div>
                     {/* Marketplace text to the right */}
-                    <a href="/" className="font-instrument-serif font-light text-lg sm:text-[1.35rem] hover:opacity-80 transition-opacity">
-                      the / marketplace
-                    </a>
+                    <Link href="/" className={`${syne.className} text-[0.95rem] sm:text-[1.2rem] hover:opacity-80 transition-opacity`}>
+                      <span className="font-medium">the / </span>
+                      <span className="font-bold">marketplace</span>
+                    </Link>
                   </div>
                 </div>
                 <div className="pointer-events-auto flex flex-1 items-center justify-end gap-4">
-                  <a
+                  <Link
                     href="/ethos"
-                    className="font-instrument-serif text-muted-foreground hover:text-foreground text-lg font-semibold transition-colors"
+                    className={`${syne.className} text-muted-foreground hover:text-foreground text-[0.95rem] sm:text-lg font-semibold transition-colors`}
                   >
                     ethos
-                  </a>
+                  </Link>
                   <a
                     href="https://github.com/openshiporg/marketplace"
                     target="_blank"

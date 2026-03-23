@@ -1,5 +1,6 @@
 "use client";
 
+import { Syne } from "next/font/google";
 import { useState, useEffect, useMemo, useRef } from "react";
 import {
   ChatContainerRoot,
@@ -7,7 +8,7 @@ import {
   ChatContainerScrollAnchor,
 } from "../features/marketplace/components/dual-sidebar/chat-container";
 import { ScrollButton } from "../features/marketplace/components/dual-sidebar/scroll-button";
-import { ArrowUp, Search, ShoppingCart } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Search, ShoppingCart } from "lucide-react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { AnimatePresence, motion } from "framer-motion";
@@ -30,6 +31,11 @@ import { CartsDropdown } from "../features/marketplace/components/dual-sidebar/c
 import { LogoIcon as OpenFrontIcon } from "@/components/OpenfrontLogo";
 import { LogoIcon as OpenShipIcon } from "@/components/OpenshipLogo";
 import { LogoIcon as OpenSupportIcon } from "@/components/OpensupportLogo";
+
+const syne = Syne({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 // Main AI Chat Page Component
 export default function HomePage() {
@@ -385,21 +391,32 @@ export default function HomePage() {
                 layout="position"
                 layoutId="onboarding"
               >
-                <div className="mb-4 sm:mb-6 flex flex-col items-center px-4">
+                <div className="mb-4 sm:mb-5 flex flex-col items-center px-4">
                   <div className="flex flex-col items-center gap-1 sm:gap-1.5 mb-3 sm:mb-4">
-                    <OpenFrontIcon className="size-5 sm:size-8" suffix="-hero-top" />
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <OpenShipIcon className="size-5 sm:size-8" suffix="-hero-left" />
-                      <OpenSupportIcon className="size-5 sm:size-8" suffix="-hero-right" />
+                    <OpenFrontIcon className="size-4 sm:size-8" suffix="-hero-top" />
+                    <div className="flex items-center gap-1.5 sm:gap-3">
+                      <OpenShipIcon className="size-4 sm:size-8" suffix="-hero-left" />
+                      <OpenSupportIcon className="size-4 sm:size-8" suffix="-hero-right" />
                     </div>
                   </div>
-                  <h1 className="text-3xl sm:text-5xl font-light tracking-tight text-center bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent font-instrument-serif">
-                    the / marketplace
+                  <h1 className={`${syne.className} text-[1.2rem] sm:text-[1.5rem] tracking-tight leading-none text-center bg-gradient-to-br from-foreground to-foreground/50 bg-clip-text text-transparent`}>
+                    <span className="font-medium">the / </span>
+                    <span className="font-bold">marketplace</span>
                   </h1>
                 </div>
-                <p className="text-base sm:text-2xl opacity-60 text-center mb-6 sm:mb-8 font-instrument-serif px-4">
+                <p className="text-base sm:text-2xl opacity-60 text-center mb-2 sm:mb-3 font-instrument-serif px-4 leading-tight">
                   Discover products • Shop seamlessly • Checkout instantly
                 </p>
+                <div className="flex justify-center px-4">
+                  <a
+                    href="https://openship.org/products/marketplace"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${syne.className} inline-flex items-center gap-1 text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors`}
+                  >
+                    Learn more <ArrowUpRight className="size-4" />
+                  </a>
+                </div>
               </motion.div>
             ) : (
               <ChatContainerRoot key="conversation" className="relative flex-1 w-full min-h-0">
@@ -453,7 +470,7 @@ export default function HomePage() {
                 onSubmit={(e) => { e.preventDefault(); if (input.trim()) { sendMessage({ text: input }); setInput(""); } }}
                 className="order-2 md:order-1 group flex flex-col w-full"
               >
-                <div className="border flex flex-col items-center justify-center p-[6.71px] relative w-full bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-[28px] shadow-lg">
+                <div className="border flex flex-col items-center justify-center p-[6.71px] relative w-full bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800 rounded-[28px] shadow-md ring-foreground/5 ring-1">
                   <div className="bg-white dark:bg-gray-950 relative rounded-[23.49px] shadow-[0px_0px_0.492px_0px_rgba(0,0,0,0.18),0px_0.984px_2.953px_0px_rgba(0,0,0,0.1)] w-full p-2 sm:p-3">
                     <div className="flex flex-row items-start gap-1 sm:gap-2">
                       <textarea
