@@ -1,10 +1,10 @@
 [
   {
-    "baseUrl": "https://abc.market.com",
-    "platform": "voxel"
+    "baseUrl": "https://nimbus-gallery.openship.org",
+    "platform": "openfront"
   },
   {
-    "baseUrl": "https://xyz.market.com",
-    "platform": "voxel"
+    "baseUrl": "https://impossible-tees.openship.org",
+    "platform": "openfront"
   }
 ]
