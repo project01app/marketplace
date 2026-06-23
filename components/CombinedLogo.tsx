@@ -8,9 +8,7 @@ export function CombinedLogo({ className = "" }: CombinedLogoProps) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {/* 
-        OPTION A: UNCOMMENT THIS IF YOU UPLOADED A LOGO IMAGE TO YOUR PUBLIC FOLDER
-        (Just remove the "/*" and "*/" symbols to make it active)
-        
+        OPTION A: UNCOMMENT BELOW IF YOU UPLOADED A LOGO IMAGE TO YOUR PUBLIC FOLDER
         <img 
           src="/my-logo.png" 
           alt="Marketplace Logo" 
@@ -18,7 +16,7 @@ export function CombinedLogo({ className = "" }: CombinedLogoProps) {
         /> 
       */}
 
-      {/* OPTION B: CLEAN TEXT PLACEHOLDER (Change "market.com" to your real brand name) */}
+      {/* OPTION B: CLEAN TEXT PLACEHOLDER */}
       <span className="font-bold text-lg tracking-tight text-neutral-900 dark:text-white">
         market.com
       </span>
