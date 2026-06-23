@@ -1,4 +1,7 @@
-import React from 'react';
+
+import { LogoIcon as OpenFrontIcon } from "./OpenfrontLogo"
+import { LogoIcon as OpenShipIcon } from "./OpenshipLogo"
+import { LogoIcon as OpenSupportIcon } from "./OpensupportLogo"
 
 interface CombinedLogoProps {
   className?: string
@@ -6,20 +9,10 @@ interface CombinedLogoProps {
 
 export function CombinedLogo({ className = "" }: CombinedLogoProps) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      {/* 
-        OPTION A: UNCOMMENT BELOW IF YOU UPLOADED A LOGO IMAGE TO YOUR PUBLIC FOLDER
-        <img 
-          src="/my-logo.png" 
-          alt="Marketplace Logo" 
-          className="h-6 w-auto object-contain" 
-        /> 
-      */}
-
-      {/* OPTION B: CLEAN TEXT PLACEHOLDER */}
-      <span className="font-bold text-lg tracking-tight text-neutral-900 dark:text-white">
-        market.com
-      </span>
+    <div className={`flex items-center gap-1 ${className}`}>
+      <OpenFrontIcon className="size-6" suffix="-navbar-front" />
+      <OpenShipIcon className="size-6" suffix="-navbar-ship" />
+      <OpenSupportIcon className="size-6" suffix="-navbar-support" />
     </div>
   )
 }
